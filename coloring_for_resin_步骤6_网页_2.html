@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Coloring for Resin Methods Compared: Results, Difficulty & Cost Explained</title>
+    <meta name="description" content="Compare 6 popular methods for coloring epoxy resin: liquid dye, mica powder, alcohol ink, metallic pigment, chameleon powder & DIY alternatives. Results, cost & difficulty rated.">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --orange-50: #fff7ed;
+            --orange-100: #ffedd5;
+            --orange-200: #fed7aa;
+            --orange-400: #fb923c;
+            --orange-500: #f97316;
+            --orange-600: #ea580c;
+            --orange-700: #c2410c;
+            --teal-50: #f0fdfa;
+            --teal-100: #ccfbf1;
+            --teal-200: #99f6e4;
+            --teal-500: #14b8a6;
+            --teal-600: #0d9488;
+            --teal-700: #0f766e;
+            --teal-800: #115e59;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --max-width: 800px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            color: var(--gray-800);
+            line-height: 1.7;
+            background: var(--gray-50);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ========== HERO BANNER ========== */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: url('https://ae-pic-a1.aliexpress-media.com/kf/S7924d4997bd146ed9deb3a320c3194e7N.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(194, 65, 12, 0.82) 0%, rgba(15, 118, 110, 0.78) 100%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, var(--gray-50), transparent);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 720px;
+            padding: 0 24px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.2;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 400;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== TABLE OF CONTENTS ========== */
+        .toc {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-left: 4px solid var(--orange-500);
+            border-radius: var(--radius-sm);
+            padding: 28px 32px;
+            margin: -40px auto 48px;
+            max-width: var(--max-width);
+            position: relative;
+            z-index: 10;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .toc h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            padding: 0;
+        }
+
+        .toc ol li {
+            counter-increment: toc-counter;
+            margin-bottom: 8px;
+        }
+
+        .toc ol li a {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            padding: 6px 8px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .toc ol li a::before {
+            content: counter(toc-counter, decimal-leading-zero);
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--orange-500);
+            min-width: 24px;
+            flex-shrink: 0;
+        }
+
+        .toc ol li a:hover {
+            background: var(--orange-50);
+            color: var(--orange-600);
+        }
+
+        /* ========== ARTICLE CONTENT ========== */
+        .article {
+            max-width: var(--max-width);
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .article p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: var(--gray-700);
+        }
+
+        .article strong {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        .article a {
+            color: var(--orange-600);
+            text-decoration: underline;
+            text-decoration-color: var(--orange-200);
+            text-underline-offset: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .article a:hover {
+            color: var(--orange-700);
+            text-decoration-color: var(--orange-500);
+        }
+
+        .article img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            margin: 24px 0 8px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .article .img-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .article hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gray-200), transparent);
+            margin: 48px 0;
+        }
+
+        /* ========== SECTION HEADERS ========== */
+        .article h2 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-top: 56px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--orange-500);
+            line-height: 1.3;
+        }
+
+        .article h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--teal-700);
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        /* ========== FEATURED PRODUCT CALLOUT ========== */
+        .featured-product {
+            background: linear-gradient(135deg, var(--orange-50), var(--teal-50));
+            border: 1px solid var(--orange-200);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            margin: 16px 0 24px;
+            font-size: 0.95rem;
+        }
+
+        .featured-product strong {
+            color: var(--orange-700);
+        }
+
+        /* ========== LISTS ========== */
+        .article ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .article ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: var(--gray-700);
+        }
+
+        .article ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--teal-500);
+            border-radius: 50%;
+        }
+
+        .article ol {
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        .article ol li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: var(--gray-700);
+        }
+
+        /* ========== TABLES ========== */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 24px 0 32px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            background: var(--white);
+        }
+
+        .article table thead {
+            background: linear-gradient(135deg, var(--orange-600), var(--teal-700));
+        }
+
+        .article table thead th {
+            color: var(--white);
+            font-weight: 700;
+            text-align: left;
+            padding: 14px 16px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+
+        .article table tbody tr {
+            border-bottom: 1px solid var(--gray-100);
+            transition: background 0.15s ease;
+        }
+
+        .article table tbody tr:nth-child(even) {
+            background: var(--gray-50);
+        }
+
+        .article table tbody tr:hover {
+            background: var(--orange-50);
+        }
+
+        .article table tbody td {
+            padding: 12px 16px;
+            color: var(--gray-700);
+            vertical-align: top;
+        }
+
+        .article table tbody td a {
+            font-size: 0.9rem;
+        }
+
+        /* ========== BEST FOR TAG ========== */
+        .best-for {
+            background: var(--teal-50);
+            border-left: 4px solid var(--teal-500);
+            padding: 12px 18px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 20px 0 8px;
+            font-size: 0.95rem;
+            color: var(--teal-800);
+        }
+
+        .best-for strong {
+            color: var(--teal-700);
+        }
+
+        /* ========== PRODUCT CARDS GRID ========== */
+        .products-section {
+            max-width: 1100px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .products-section > h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .products-section > p.section-subtitle {
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 1rem;
+            margin-bottom: 36px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .product-card-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            background: var(--gray-100);
+        }
+
+        .product-card-body {
+            padding: 18px 20px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            line-height: 1.4;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-card-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--orange-600);
+            margin-bottom: 16px;
+        }
+
+        .product-card-btn {
+            display: inline-block;
+            text-align: center;
+            background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            margin-top: auto;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .product-card-btn:hover {
+            background: linear-gradient(135deg, var(--orange-600), var(--orange-700));
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .site-footer a {
+            color: var(--orange-400);
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--orange-500), var(--teal-500));
+            margin: 0 auto 16px;
+            border-radius: 2px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 900px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                height: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .toc {
+                margin: -30px 16px 36px;
+                padding: 20px 20px;
+            }
+
+            .article {
+                padding: 0 16px;
+            }
+
+            .article h2 {
+                font-size: 1.35rem;
+            }
+
+            .article h3 {
+                font-size: 1.05rem;
+            }
+
+            .article table {
+                font-size: 0.82rem;
+            }
+
+            .article table thead th,
+            .article table tbody td {
+                padding: 10px 10px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .products-section {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HERO BANNER ========== -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>6 Coloring for Resin Methods Compared: Results, Difficulty &amp; Cost Explained</h1>
+            <p class="hero-subtitle">A hands-on comparison of the most popular resin coloring methods — from liquid dye to chameleon powder</p>
+        </div>
+    </header>
+
+    <!-- ========== TABLE OF CONTENTS ========== -->
+    <nav class="toc container">
+        <h2>Table of Contents</h2>
+        <ol>
+            <li><a href="#quick-summary">Quick Summary: 6 Resin Coloring Methods at a Glance</a></li>
+            <li><a href="#method-1">Method 1: Liquid Resin Dye &mdash; Clean, Transparent Color</a></li>
+            <li><a href="#method-2">Method 2: Mica Powder &mdash; Shimmer &amp; Pearlescent Effects</a></li>
+            <li><a href="#method-3">Method 3: Alcohol Ink &mdash; Diffusion &amp; Watercolor Effects</a></li>
+            <li><a href="#method-4">Method 4: Metallic Pigment &mdash; Gold, Silver &amp; Luxury Finishes</a></li>
+            <li><a href="#method-5">Method 5: Chameleon / Color-Shifting Powder &mdash; Iridescent Magic</a></li>
+            <li><a href="#method-6">Method 6: DIY Alternatives &mdash; What Actually Works?</a></li>
+            <li><a href="#cost-comparison">Cost Comparison Breakdown</a></li>
+            <li><a href="#difficulty-guide">Difficulty Level Guide for Beginners</a></li>
+            <li><a href="#people-also-ask">People Also Ask</a></li>
+            <li><a href="#conclusion">Conclusion: Which Coloring Method Should You Choose?</a></li>
+        </ol>
+    </nav>
+
+    <!-- ========== ARTICLE BODY ========== -->
+    <article class="article container">
+
+        <p>Choosing the right <strong>coloring for resin</strong> can make or break your project. Whether you're crafting jewelry, pouring ocean art, or building custom coasters, the colorant you pick determines everything — transparency, shimmer, depth, and even how the resin cures. With so many options on the market, it's easy to feel overwhelmed.</p>
+
+        <p>In this hands-on comparison, we test and break down <strong>six popular methods</strong> for coloring epoxy resin: liquid resin dye, mica powder, alcohol ink, metallic pigment, chameleon color-shifting powder, and common DIY alternatives like acrylic paint. For each method, we evaluate the visual result, ease of use, cost per project, and compatibility with standard two-part epoxy resin.</p>
+
+        <p>By the end of this guide, you'll know exactly which coloring method fits your skill level and project goals — and which budget-friendly products actually deliver professional-looking results. Let's dive in.</p>
+
+        <hr>
+
+        <!-- ===== QUICK SUMMARY ===== -->
+        <h2 id="quick-summary">Quick Summary: 6 Resin Coloring Methods at a Glance</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Finish</th>
+                        <th>Transparency</th>
+                        <th>Difficulty</th>
+                        <th>Cost per oz</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Liquid Resin Dye</td>
+                        <td>Smooth, even color</td>
+                        <td>Transparent to semi-opaque</td>
+                        <td>Easy</td>
+                        <td>$0.10–0.25</td>
+                        <td>Jewelry, coasters, even color</td>
+                    </tr>
+                    <tr>
+                        <td>Mica Powder</td>
+                        <td>Shimmer, pearlescent</td>
+                        <td>Semi-opaque</td>
+                        <td>Easy</td>
+                        <td>$0.05–0.15</td>
+                        <td>Galaxy art, shimmer effects</td>
+                    </tr>
+                    <tr>
+                        <td>Alcohol Ink</td>
+                        <td>Diffusion, watercolor</td>
+                        <td>Transparent</td>
+                        <td>Medium</td>
+                        <td>$0.10–0.20</td>
+                        <td>Petri dish art, cells</td>
+                    </tr>
+                    <tr>
+                        <td>Metallic Pigment</td>
+                        <td>Gold/silver metallic</td>
+                        <td>Opaque</td>
+                        <td>Easy</td>
+                        <td>$0.08–0.20</td>
+                        <td>Luxury accents, metallic pour</td>
+                    </tr>
+                    <tr>
+                        <td>Chameleon Powder</td>
+                        <td>Color-shifting iridescent</td>
+                        <td>Semi-opaque</td>
+                        <td>Medium</td>
+                        <td>$0.15–0.30</td>
+                        <td>Iridescent effects, statement pieces</td>
+                    </tr>
+                    <tr>
+                        <td>DIY Alternatives</td>
+                        <td>Varies</td>
+                        <td>Varies</td>
+                        <td>Hard</td>
+                        <td>$0.02–0.10</td>
+                        <td>Budget experiments</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <!-- ===== METHOD 1 ===== -->
+        <h2 id="method-1">Method 1: Liquid Resin Dye &mdash; Clean, Transparent Color</h2>
+
+        <p>Liquid resin dye is the most popular coloring for resin among beginners and professionals alike. These concentrated dyes are formulated specifically for epoxy resin, mixing in smoothly without clumping or streaking.</p>
+
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S53af1b577f9b4f78b977722b9ed58bd81.jpg" alt="10 Colors Translucent Concentrated Resin Colorant" loading="lazy">
+        <p class="img-caption">10 Colors/Set Translucent Concentrated Resin Colorant</p>
+
+        <div class="featured-product">
+            <strong>Featured Product:</strong> <a href="https://www.aliexpress.com/item/1005010487460059.html">10 Colors/Set Translucent Concentrated Resin Colorant</a> — US $5.65 for 10 colors
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p>Liquid dyes are added drop by drop to your mixed resin. Start with <strong>1–2 drops per ounce of mixed resin</strong> and build up from there. The color disperses evenly with gentle stirring — no special tools required.</p>
+
+        <h3>Results</h3>
+
+        <ul>
+            <li><strong>Transparent finish</strong> that lets light pass through</li>
+            <li>Smooth, even color with no visible particles</li>
+            <li>Colors layer beautifully for gradient effects</li>
+            <li>Will not settle at the bottom of your mold</li>
+        </ul>
+
+        <h3>Mixing Ratio &amp; Tips</h3>
+
+        <ul>
+            <li><strong>Ratio:</strong> 1–3 drops per oz of mixed resin for transparent color; 5–8 drops for deeper saturation</li>
+            <li>Stir gently for 60–90 seconds to avoid introducing air bubbles</li>
+            <li>Colors appear darker once cured — always test a small batch first</li>
+            <li>Mix colors together to create custom shades (e.g., 2 drops blue + 1 drop green = teal)</li>
+        </ul>
+
+        <h3>Pros &amp; Cons</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Easiest to mix</td>
+                        <td>Limited color range per set</td>
+                    </tr>
+                    <tr>
+                        <td>Even, streak-free color</td>
+                        <td>Can look washed out in thin pours</td>
+                    </tr>
+                    <tr>
+                        <td>Won't affect curing</td>
+                        <td>Some dyes fade under UV over time</td>
+                    </tr>
+                    <tr>
+                        <td>Affordable per project</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="best-for"><strong>Best for:</strong> Beginners, transparent jewelry pieces, coasters, bookmarks, and any project where you want clean, glass-like color.</div>
+
+        <hr>
+
+        <!-- ===== METHOD 2 ===== -->
+        <h2 id="method-2">Method 2: Mica Powder &mdash; Shimmer &amp; Pearlescent Effects</h2>
+
+        <p>Mica powder is a mineral-based pigment that gives resin a beautiful shimmer and pearlescent glow. It's one of the most versatile coloring options for resin, especially when you want sparkle and depth.</p>
+
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf355802f88c143f596876dda3afb47bfC.jpg" alt="6 Pcs Epoxy Resin Dye Mica Powder Pearlescent" loading="lazy">
+        <p class="img-caption">6 Pcs/Set Epoxy Resin Dye Mica Powder Pearlescent</p>
+
+        <div class="featured-product">
+            <strong>Featured Product:</strong> <a href="https://www.aliexpress.com/item/1005007476583740.html">6 Pcs/Set Epoxy Resin Dye Mica Powder Pearlescent</a> — US $3.94 for 6 colors
+        </div>
+
+        <div class="featured-product">
+            <strong>Budget Pick:</strong> <a href="https://www.aliexpress.com/item/1005010759448734.html">10g 28 Colors Mica Powder Natural Pearl Powder</a> — US $2.03 for a single 10g jar
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p>Mica powder is a fine, dry powder that you add directly to mixed resin. Use a small spatula or toothpick to scoop the powder in, then stir thoroughly. The particles catch and reflect light, creating that signature shimmer effect.</p>
+
+        <h3>Results</h3>
+
+        <ul>
+            <li><strong>Pearlescent, shimmer finish</strong> that shifts with viewing angle</li>
+            <li>Semi-opaque to opaque coverage depending on amount used</li>
+            <li>Creates beautiful "galaxy" and "ocean" effects</li>
+            <li>Visible sparkle particles that add depth and dimension</li>
+        </ul>
+
+        <h3>Mixing Ratio &amp; Tips</h3>
+
+        <ul>
+            <li><strong>Ratio:</strong> 1/8 to 1/4 teaspoon per oz of mixed resin</li>
+            <li>Mix powder with a tiny amount of isopropyl alcohol first to create a paste — this prevents clumping</li>
+            <li>Stir slowly and thoroughly for at least 2 minutes</li>
+            <li>Powder settles over time in the mold, so pour soon after mixing</li>
+            <li>Layer different colors for stunning gradient effects</li>
+        </ul>
+
+        <h3>Pros &amp; Cons</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Stunning shimmer effect</td>
+                        <td>Can clump if not pre-mixed</td>
+                    </tr>
+                    <tr>
+                        <td>Huge color variety available</td>
+                        <td>Settles at bottom in thin pours</td>
+                    </tr>
+                    <tr>
+                        <td>Very affordable per use</td>
+                        <td>Creates opaque finish at higher amounts</td>
+                    </tr>
+                    <tr>
+                        <td>Lightfast and UV-resistant</td>
+                        <td>Fine powder can be messy</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="best-for"><strong>Best for:</strong> Galaxy art, ocean pour paintings, jewelry with shimmer, keychains, and decorative home pieces.</div>
+
+        <hr>
+
+        <!-- ===== METHOD 3 ===== -->
+        <h2 id="method-3">Method 3: Alcohol Ink &mdash; Diffusion &amp; Watercolor Effects</h2>
+
+        <p>Alcohol ink is the secret weapon behind those stunning "petri dish" resin art pieces with organic, flowing tendrils of color. The alcohol-based formula interacts with resin in unique ways that no other colorant can replicate.</p>
+
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/H266448d177314250a618f7aacc67bfe2r.jpg" alt="10ml Epoxy Resin Diffusion Pigment Alcohol Ink" loading="lazy">
+        <p class="img-caption">10ml Epoxy Resin Diffusion Pigment Alcohol Ink</p>
+
+        <div class="featured-product">
+            <strong>Featured Product:</strong> <a href="https://www.aliexpress.com/item/1005007180544079.html">10ml Epoxy Resin Diffusion Pigment Alcohol Ink</a> — US $0.99 per bottle
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p>Unlike other colorants that you mix directly into resin, alcohol ink is typically <strong>dropped onto the surface</strong> of poured resin. The alcohol evaporates and carries the pigment into the resin, creating organic cells, tendrils, and watercolor-like diffusion patterns.</p>
+
+        <h3>Results</h3>
+
+        <ul>
+            <li><strong>Watercolor-like diffusion</strong> with organic, flowing patterns</li>
+            <li>Transparent finish with visible depth</li>
+            <li>Creates unique cells and lacing effects</li>
+            <li>Each pour is one-of-a-kind — impossible to exactly replicate</li>
+        </ul>
+
+        <h3>Mixing Ratio &amp; Tips</h3>
+
+        <ul>
+            <li><strong>Ratio:</strong> 2–4 drops on the surface of each 4 oz of poured resin</li>
+            <li>Pour your clear (or lightly tinted) resin first, then drop ink onto the surface</li>
+            <li>Use a heat gun or torch on low to encourage ink to spread and create cells</li>
+            <li><strong>Do NOT stir</strong> — stirring destroys the diffusion effect</li>
+            <li>Combine with white liquid dye underneath for dramatic contrast with colored tendrils on top</li>
+            <li>Work in a well-ventilated area — alcohol fumes are strong</li>
+        </ul>
+
+        <h3>Pros &amp; Cons</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Unique, artistic effects</td>
+                        <td>Results are unpredictable</td>
+                    </tr>
+                    <tr>
+                        <td>Creates organic patterns</td>
+                        <td>Requires more practice</td>
+                    </tr>
+                    <tr>
+                        <td>Very affordable</td>
+                        <td>Alcohol fumes require ventilation</td>
+                    </tr>
+                    <tr>
+                        <td>Beautiful layered depth</td>
+                        <td>Not ideal for uniform color</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="best-for"><strong>Best for:</strong> Petri dish art, abstract ocean art, statement jewelry, and any project where you want organic, one-of-a-kind patterns.</div>
+
+        <hr>
+
+        <!-- ===== METHOD 4 ===== -->
+        <h2 id="method-4">Method 4: Metallic Pigment &mdash; Gold, Silver &amp; Luxury Finishes</h2>
+
+        <p>If you want your resin pieces to look like molten metal, metallic pigments are the way to go. These concentrated pigments contain fine metallic particles that create a reflective, chrome-like finish.</p>
+
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sab7fcb4a74c941ff83f23e3e2de8231bB.jpg" alt="50g Shimmer Metallic Gold Silver Pearlescent Pigment" loading="lazy">
+        <p class="img-caption">50g Shimmer Metallic Gold Silver Pearlescent Pigment</p>
+
+        <div class="featured-product">
+            <strong>Featured Product:</strong> <a href="https://www.aliexpress.com/item/1005008715679583.html">50g Shimmer Metallic Gold Silver Pearlescent Pigment</a> — US $2.92
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p>Metallic pigments come in powder or paste form and are mixed directly into your resin. The metallic particles suspend throughout the resin, catching light from every angle for a true metallic sheen.</p>
+
+        <h3>Results</h3>
+
+        <ul>
+            <li><strong>True metallic finish</strong> — looks like brushed gold, silver, copper, or bronze</li>
+            <li>Opaque coverage that completely conceals the resin beneath</li>
+            <li>Creates dramatic contrast when swirled with clear resin</li>
+            <li>Professional-looking results with minimal effort</li>
+        </ul>
+
+        <h3>Mixing Ratio &amp; Tips</h3>
+
+        <ul>
+            <li><strong>Ratio:</strong> 1/4 to 1/2 teaspoon per oz of mixed resin</li>
+            <li>Add pigment to Part A before mixing with Part B for easier dispersion</li>
+            <li>Stir for a full 2 minutes until no streaks remain</li>
+            <li>For a marble effect, mix metallic pigment into only half your resin and swirl with clear</li>
+            <li>Works especially well with silicone molds that have geometric patterns</li>
+        </ul>
+
+        <h3>Pros &amp; Cons</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Luxurious metallic finish</td>
+                        <td>Opaque — no transparency</td>
+                    </tr>
+                    <tr>
+                        <td>Easy to mix</td>
+                        <td>Limited to metallic color palette</td>
+                    </tr>
+                    <tr>
+                        <td>Excellent coverage</td>
+                        <td>Can separate in slow-curing resin</td>
+                    </tr>
+                    <tr>
+                        <td>Works with any mold type</td>
+                        <td>Slightly more expensive per oz</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="best-for"><strong>Best for:</strong> Luxury jewelry, geode art, metallic coasters, pen blanks, and accent details in larger pieces.</div>
+
+        <hr>
+
+        <!-- ===== METHOD 5 ===== -->
+        <h2 id="method-5">Method 5: Chameleon / Color-Shifting Powder &mdash; Iridescent Magic</h2>
+
+        <p>Chameleon pigments are the showstoppers of the resin coloring world. These specialized powders shift between two or more colors depending on the viewing angle, creating an iridescent, almost holographic effect that changes as the piece moves.</p>
+
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Scc1b52a52e394846b49ad402cc539440B.jpg" alt="Mirror Chameleons Resin Pigment Mica Powder" loading="lazy">
+        <p class="img-caption">Mirror Chameleons Resin Pigment Mica Powder</p>
+
+        <div class="featured-product">
+            <strong>Featured Product:</strong> <a href="https://www.aliexpress.com/item/1005005724391409.html">Mirror Chameleons Resin Pigment Mica Powder</a> — US $0.99 per color
+        </div>
+
+        <h3>How It Works</h3>
+
+        <p>Chameleon powder uses multi-layer optical pigments that refract light differently at different angles. Mix the powder into your resin as you would mica powder — the key difference is the dramatic color shift that appears once the piece is cured.</p>
+
+        <h3>Results</h3>
+
+        <ul>
+            <li><strong>Color-shifting iridescent effect</strong> — one color face-on, another at an angle</li>
+            <li>Creates a sense of depth and movement</li>
+            <li>Semi-opaque with a mirror-like sheen</li>
+            <li>Extremely eye-catching for statement pieces</li>
+        </ul>
+
+        <h3>Mixing Ratio &amp; Tips</h3>
+
+        <ul>
+            <li><strong>Ratio:</strong> 1/8 to 1/4 teaspoon per oz of mixed resin</li>
+            <li>Less is more — too much powder will muddy the color-shift effect</li>
+            <li>Pre-mix with a drop of isopropyl alcohol to prevent clumping</li>
+            <li>Works best in <strong>thicker pours</strong> (1/4 inch or deeper) where light can interact with the particles</li>
+            <li>Black or dark background enhances the color-shift effect dramatically</li>
+            <li>Use a toothpick to create swirls that emphasize the directional color change</li>
+        </ul>
+
+        <h3>Pros &amp; Cons</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Stunning color-shift effect</td>
+                        <td>More expensive than standard mica</td>
+                    </tr>
+                    <tr>
+                        <td>Unique, premium look</td>
+                        <td>Can look muddy if over-mixed</td>
+                    </tr>
+                    <tr>
+                        <td>Lightfast and durable</td>
+                        <td>Effect less visible in thin layers</td>
+                    </tr>
+                    <tr>
+                        <td>Great conversation starter</td>
+                        <td>Limited color options available</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="best-for"><strong>Best for:</strong> Statement jewelry, custom phone cases, premium keychains, and any project where you want a high-end iridescent finish.</div>
+
+        <hr>
+
+        <!-- ===== METHOD 6 ===== -->
+        <h2 id="method-6">Method 6: DIY Alternatives &mdash; What Actually Works?</h2>
+
+        <p>If you're wondering <strong>how to dye resin without dye</strong>, you're not alone. Many crafters experiment with household items. Here's an honest breakdown of what works and what doesn't.</p>
+
+        <h3>Acrylic Paint</h3>
+
+        <ul>
+            <li><strong>Result:</strong> Opaque, chalky color with a matte finish</li>
+            <li><strong>Verdict:</strong> It works in a pinch, but acrylic paint contains water, which can interfere with the curing process. Use <strong>no more than 6% of your total resin volume</strong> to avoid sticky, uncured resin.</li>
+            <li><strong>Tip:</strong> Choose heavy-body acrylics over student-grade for better pigment concentration.</li>
+        </ul>
+
+        <h3>Eye Shadow / Loose Cosmetic Pigment</h3>
+
+        <ul>
+            <li><strong>Result:</strong> Similar to mica powder — shimmery and pearlescent</li>
+            <li><strong>Verdict:</strong> Surprisingly effective! Many cosmetic-grade eye shadows contain mica and work well in resin. Crush powder shadows finely before mixing.</li>
+            <li><strong>Tip:</strong> Test for colorfastness — some cosmetics fade under UV exposure.</li>
+        </ul>
+
+        <h3>Food Coloring</h3>
+
+        <ul>
+            <li><strong>Result:</strong> Weak, translucent tint</li>
+            <li><strong>Verdict:</strong> <strong>Not recommended.</strong> Food coloring is water-based and can prevent proper curing. Colors also fade rapidly.</li>
+        </ul>
+
+        <h3>Powdered Spices (Turmeric, Paprika)</h3>
+
+        <ul>
+            <li><strong>Result:</strong> Warm, earthy tones with organic texture</li>
+            <li><strong>Verdict:</strong> Partially works for a rustic look, but colors will fade within weeks and particles create a grainy texture.</li>
+        </ul>
+
+        <h3>Can You Use Regular Dye in Resin?</h3>
+
+        <p><strong>No — regular fabric dye or Rit dye should not be used in resin.</strong> These dyes are water-based and will not properly bond with epoxy resin. The water content can interfere with the chemical curing reaction, leaving you with soft, tacky resin that never fully hardens. Always use colorants specifically formulated for resin, or use alcohol-based inks as an alternative.</p>
+
+        <hr>
+
+        <!-- ===== COST COMPARISON ===== -->
+        <h2 id="cost-comparison">Cost Comparison Breakdown</h2>
+
+        <p>Here's what you'll actually spend per project using each coloring method, based on a standard <strong>8 oz resin pour</strong> (enough for a set of 4 coasters or a medium jewelry tray):</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Amount Used per 8 oz</th>
+                        <th>Cost per Project</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Liquid Dye</td>
+                        <td><a href="https://www.aliexpress.com/item/1005010487460059.html">10-Color Concentrated Set</a></td>
+                        <td>$5.65</td>
+                        <td>10–20 drops</td>
+                        <td>~$0.15</td>
+                    </tr>
+                    <tr>
+                        <td>Liquid Pigment</td>
+                        <td><a href="https://www.aliexpress.com/item/1005012153345210.html">20-Color Highly Concentrated</a></td>
+                        <td>$20.31</td>
+                        <td>10–20 drops</td>
+                        <td>~$0.25</td>
+                    </tr>
+                    <tr>
+                        <td>Mica Powder</td>
+                        <td><a href="https://www.aliexpress.com/item/1005007476583740.html">6-Color Pearlescent Set</a></td>
+                        <td>$3.94</td>
+                        <td>1/2 tsp</td>
+                        <td>~$0.20</td>
+                    </tr>
+                    <tr>
+                        <td>Mica Powder</td>
+                        <td><a href="https://www.aliexpress.com/item/1005010759448734.html">28 Colors Natural Pearl</a></td>
+                        <td>$2.03</td>
+                        <td>1/2 tsp</td>
+                        <td>~$0.10</td>
+                    </tr>
+                    <tr>
+                        <td>Alcohol Ink</td>
+                        <td><a href="https://www.aliexpress.com/item/1005007180544079.html">10ml Diffusion Pigment</a></td>
+                        <td>$0.99</td>
+                        <td>4–6 drops</td>
+                        <td>~$0.05</td>
+                    </tr>
+                    <tr>
+                        <td>Metallic Pigment</td>
+                        <td><a href="https://www.aliexpress.com/item/1005008715679583.html">50g Gold/Silver Shimmer</a></td>
+                        <td>$2.92</td>
+                        <td>1/2 tsp</td>
+                        <td>~$0.15</td>
+                    </tr>
+                    <tr>
+                        <td>Chameleon Powder</td>
+                        <td><a href="https://www.aliexpress.com/item/1005005724391409.html">Mirror Chameleon Pigment</a></td>
+                        <td>$0.99</td>
+                        <td>1/4 tsp</td>
+                        <td>~$0.10</td>
+                    </tr>
+                    <tr>
+                        <td>Liquid Colorant</td>
+                        <td><a href="https://www.aliexpress.com/item/1005006959314838.html">80g Highly Concentrated</a></td>
+                        <td>$0.99</td>
+                        <td>10–15 drops</td>
+                        <td>~$0.05</td>
+                    </tr>
+                    <tr>
+                        <td>Liquid Dye</td>
+                        <td><a href="https://www.aliexpress.com/item/1005012281767192.html">6/12-Color Pigment Set</a></td>
+                        <td>$1.64</td>
+                        <td>10–20 drops</td>
+                        <td>~$0.10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sef60ac220a00426a9276796e0288d2b41.jpg" alt="20 Color Epoxy Resin Pigment Highly Concentrated" loading="lazy">
+        <p class="img-caption">20 Color Epoxy Resin Pigment, Highly Concentrated</p>
+
+        <div class="featured-product">
+            <strong>Upgrade Pick:</strong> <a href="https://www.aliexpress.com/item/1005012153345210.html">20 Color Epoxy Resin Pigment, Highly Concentrated</a> — US $20.31 for 20 colors
+        </div>
+
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Hc1d580144bfe462ebf0d48b84da1eb81o.jpg" alt="80g Epoxy Resin Pigments Highly Concentrated" loading="lazy">
+        <p class="img-caption">80g Epoxy Resin Pigments Highly Concentrated Liquid Colorant</p>
+
+        <div class="featured-product">
+            <strong>Budget Pick:</strong> <a href="https://www.aliexpress.com/item/1005006959314838.html">80g Epoxy Resin Pigments Highly Concentrated Liquid Colorant</a> — US $0.99
+        </div>
+
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sebe358f7767941f78306c822c0232f33x.jpeg" alt="6/12 Color Epoxy Resin Dye Pigment" loading="lazy">
+        <p class="img-caption">6/12-Color Epoxy Resin Dye Pigment</p>
+
+        <div class="featured-product">
+            <strong>Value Pick:</strong> <a href="https://www.aliexpress.com/item/1005012281767192.html">6/12-Color Epoxy Resin Dye Pigment</a> — US $1.64
+        </div>
+
+        <p><strong>Key takeaway:</strong> All resin coloring methods are extremely affordable — typically costing less than <strong>$0.25 per project</strong> for colorant alone. The biggest investment is always the resin itself, not the color.</p>
+
+        <hr>
+
+        <!-- ===== DIFFICULTY GUIDE ===== -->
+        <h2 id="difficulty-guide">Difficulty Level Guide for Beginners</h2>
+
+        <h3>Beginner-Friendly (Start Here)</h3>
+
+        <ol>
+            <li><strong>Liquid Resin Dye</strong> — Just add drops and stir. Near-impossible to mess up.</li>
+            <li><strong>Mica Powder</strong> — Mix and pour. Pre-mixing with alcohol eliminates clumping.</li>
+            <li><strong>Metallic Pigment</strong> — Same process as mica powder, with foolproof metallic results.</li>
+        </ol>
+
+        <h3>Intermediate (Some Practice Helpful)</h3>
+
+        <ol start="4">
+            <li><strong>Chameleon Powder</strong> — Requires careful ratio control. Too much powder kills the color-shift effect.</li>
+            <li><strong>Alcohol Ink</strong> — Demands understanding of timing and heat manipulation. Results vary.</li>
+        </ol>
+
+        <h3>Advanced / Experimental</h3>
+
+        <ol start="6">
+            <li><strong>DIY Alternatives</strong> — Acrylic paint and household pigments require careful testing and an understanding of resin chemistry. Higher risk of curing problems.</li>
+        </ol>
+
+        <div class="featured-product">
+            <strong>Our recommendation for first-time resin crafters:</strong> Start with a liquid dye set like the <a href="https://www.aliexpress.com/item/1005010487460059.html">10-Color Concentrated Set ($5.65)</a> and add a <a href="https://www.aliexpress.com/item/1005007476583740.html">Mica Powder set ($3.94)</a> for shimmer effects. That's less than $10 for two versatile coloring methods that cover 80% of common resin projects.
+        </div>
+
+        <hr>
+
+        <!-- ===== PEOPLE ALSO ASK ===== -->
+        <h2 id="people-also-ask">People Also Ask</h2>
+
+        <h3>How to dye resin without dye?</h3>
+
+        <p>If you don't have resin-specific dye, you can use several alternatives. <strong>Alcohol ink</strong> works well for diffusion effects — drop a few drops onto poured resin and let it spread naturally. <strong>Mica powder</strong> or even <strong>crushed eye shadow</strong> can add shimmer. <strong>Acrylic paint</strong> works in small amounts (under 6% of total volume), though it may slightly affect curing. Avoid water-based colorants like food coloring, as the water prevents proper resin curing. For the best results on a budget, a $0.99 bottle of <a href="https://www.aliexpress.com/item/1005006959314838.html">concentrated liquid colorant</a> goes a long way.</p>
+
+        <h3>Can you use regular dye in resin?</h3>
+
+        <p><strong>No.</strong> Regular dye — such as fabric dye (Rit), hair dye, or clothing dye — is water-based and should <strong>never</strong> be used in epoxy resin. The water content interferes with the chemical reaction between Parts A and B, which can result in soft, sticky, or incompletely cured resin. Additionally, these dyes are not designed to bond with resin polymers, so the color will separate or bleed. Always choose colorants labeled as resin-safe, alcohol-based, or oil-based.</p>
+
+        <h3>How do I color resin transparent?</h3>
+
+        <p>For transparent resin color, use <strong>liquid resin dye</strong> — it's specifically designed to tint resin while maintaining transparency. Add 1–2 drops per ounce of mixed resin and stir gently. Avoid mica powder and metallic pigments, as these create opaque or semi-opaque results. For a watercolor-transparent look, try dropping a small amount of alcohol ink onto the resin surface without stirring.</p>
+
+        <h3>Can I mix different coloring methods together?</h3>
+
+        <p><strong>Yes!</strong> Some of the most stunning resin art combines multiple methods. A popular combination is liquid dye for a transparent base color, with mica powder or metallic pigment swirled in for shimmer accents. You can also use alcohol ink on top of resin tinted with liquid dye for dramatic contrast. Just make sure all colorants are resin-compatible (not water-based).</p>
+
+        <hr>
+
+        <!-- ===== CONCLUSION ===== -->
+        <h2 id="conclusion">Conclusion: Which Coloring Method Should You Choose?</h2>
+
+        <p>The best coloring for resin depends entirely on your project and the look you want to achieve. Here's our recommendation breakdown:</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>If You Want...</th>
+                        <th>Choose This</th>
+                        <th>Top Product Pick</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Clean, glass-like color</td>
+                        <td>Liquid Resin Dye</td>
+                        <td><a href="https://www.aliexpress.com/item/1005010487460059.html">10-Color Set — $5.65</a></td>
+                    </tr>
+                    <tr>
+                        <td>Sparkle &amp; shimmer</td>
+                        <td>Mica Powder</td>
+                        <td><a href="https://www.aliexpress.com/item/1005007476583740.html">6-Color Pearlescent — $3.94</a></td>
+                    </tr>
+                    <tr>
+                        <td>Artistic diffusion patterns</td>
+                        <td>Alcohol Ink</td>
+                        <td><a href="https://www.aliexpress.com/item/1005007180544079.html">10ml Diffusion Ink — $0.99</a></td>
+                    </tr>
+                    <tr>
+                        <td>Luxury metallic finish</td>
+                        <td>Metallic Pigment</td>
+                        <td><a href="https://www.aliexpress.com/item/1005008715679583.html">50g Gold/Silver — $2.92</a></td>
+                    </tr>
+                    <tr>
+                        <td>Color-shifting iridescence</td>
+                        <td>Chameleon Powder</td>
+                        <td><a href="https://www.aliexpress.com/item/1005005724391409.html">Mirror Chameleon — $0.99</a></td>
+                    </tr>
+                    <tr>
+                        <td>Budget experimentation</td>
+                        <td>DIY (Acrylic Paint)</td>
+                        <td>Whatever you have at home</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="featured-product">
+            <strong>Our top overall value pick:</strong> The <a href="https://www.aliexpress.com/item/1005006959314838.html">80g Highly Concentrated Liquid Colorant at $0.99</a> delivers excellent color payoff at an unbeatable price — perfect for anyone getting started with resin coloring.
+        </div>
+
+        <p>No matter which method you choose, remember these universal rules: always mix color into your resin <strong>after</strong> combining Parts A and B, start with less colorant than you think you need, and always do a small test pour before committing to a large project. Happy crafting!</p>
+
+    </article>
+
+    <!-- ========== PRODUCT CARDS GRID ========== -->
+    <section class="products-section">
+        <h2>Recommended Products</h2>
+        <p class="section-subtitle">All products tested and recommended for resin coloring projects</p>
+
+        <div class="products-grid">
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/S53af1b577f9b4f78b977722b9ed58bd81.jpg" alt="10 Colors/Set Translucent Concentrated Resin Colorant" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">10 Colors/Set Translucent Concentrated Resin Colorant, Non-Toxic Epoxy Resin Pigment Dye Liquid</p>
+                    <p class="product-card-price">US $5.65</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005010487460059.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/Sef60ac220a00426a9276796e0288d2b41.jpg" alt="20 Color Epoxy Resin Pigment Highly Concentrated" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">20 Color Epoxy Resin Pigment, Highly Concentrated Resin Dye for DIY Jewelry &amp; Resin Crafts</p>
+                    <p class="product-card-price">US $20.31</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005012153345210.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/S2d62a8e4c8a14ec08de8630476a3d421y.jpg" alt="18 Solid Color Epoxy Liquid Dyes" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">18 Solid Color Epoxy Liquid Dyes for DIY Jewelry, Resin Keychains, Coasters &amp; Art Crafting</p>
+                    <p class="product-card-price">US $17.07</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005012139280327.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/Sf355802f88c143f596876dda3afb47bfC.jpg" alt="6 Pcs Epoxy Resin Dye Mica Powder Pearlescent" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">6 Pcs/Set Epoxy Resin Dye Mica Powder Pearlescent Pigments Set, Box-Packed Colorants</p>
+                    <p class="product-card-price">US $3.94</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005007476583740.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/S7924d4997bd146ed9deb3a320c3194e7N.jpg" alt="10g 28 Colors Mica Powder Natural Pearl Powder" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">10g 28 Colors Mica Powder Natural Pearl Powder Dye for Epoxy Resin DIY Jewelry Making</p>
+                    <p class="product-card-price">US $2.03</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005010759448734.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/Sab7fcb4a74c941ff83f23e3e2de8231bB.jpg" alt="50g Shimmer Metallic Gold Silver Pearlescent Pigment" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">50g Shimmer Metallic Gold Silver Color Pigment Pearlescent Colorant for UV Resin Epoxy</p>
+                    <p class="product-card-price">US $2.92</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005008715679583.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/Hc1d580144bfe462ebf0d48b84da1eb81o.jpg" alt="80g Epoxy Resin Pigments Highly Concentrated" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">80g Epoxy Resin Pigments Second-generation Highly Concentrated Bright Color Liquid Colorant</p>
+                    <p class="product-card-price">US $0.99</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005006959314838.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/H266448d177314250a618f7aacc67bfe2r.jpg" alt="10ml Epoxy Resin Diffusion Pigment Alcohol Ink" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">10ml Epoxy Resin Diffusion Pigment Alcohol Ink Liquid Colorant Dye for Jewelry Making</p>
+                    <p class="product-card-price">US $0.99</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005007180544079.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/Scc1b52a52e394846b49ad402cc539440B.jpg" alt="Mirror Chameleons Resin Pigment Mica Powder" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">Mirror Chameleons Resin Pigment Glitter Magic Discolored Pearlescent Powder Epoxy Dye</p>
+                    <p class="product-card-price">US $0.99</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005005724391409.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product-card">
+                <img class="product-card-image" src="https://ae-pic-a1.aliexpress-media.com/kf/Sebe358f7767941f78306c822c0232f33x.jpeg" alt="6/12 Color Epoxy Resin Dye Pigment" loading="lazy">
+                <div class="product-card-body">
+                    <p class="product-card-title">6/12-Color Epoxy Resin Dye Pigment, Suitable for Resin Coloring and Handicraft Making (5ml per bottle)</p>
+                    <p class="product-card-price">US $1.64</p>
+                    <a class="product-card-btn" href="https://www.aliexpress.com/item/1005012281767192.html" target="_blank" rel="noopener noreferrer">View on AliExpress</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="footer-divider"></div>
+        <p>&copy; 2026 Resin Craft Guide. All rights reserved.</p>
+        <p>Product prices and availability are subject to change. Last updated: May 2026.</p>
+    </footer>
+
+</body>
+</html>
